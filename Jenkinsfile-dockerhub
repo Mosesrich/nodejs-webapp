@@ -5,16 +5,16 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
      }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('karo-dockerhub')
-    APP_NAME = "ooghenekaro/nodejs-push"
+    DOCKERHUB_CREDENTIALS = credentials('moses-dockerhub')
+    APP_NAME = "mosesrich/nodejs-push"
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-           git branch: 'main', url: 'https://github.com/ooghenekaro/nodejs-webapp.git'
+           git branch: 'main', url: 'https://github.com/mosesrich/nodejs-webapp.git'
             }
         }
-        
+        //
         stage('Run Sonarqube') {
             environment {
                 scannerHome = tool 'ibt-sonarqube';
