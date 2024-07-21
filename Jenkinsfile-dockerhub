@@ -6,7 +6,6 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('moses-dockerhub')
-    DOCKERHUB_CREDENTIALS_USR = "mosesrich"
     APP_NAME = "mosesrich/nodejs-push"
     }
     stages { 
